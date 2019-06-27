@@ -1,0 +1,11 @@
+.vscode
+.DS_Store
+build
+.git
+*.egg-info
+dist
+yolo/weights/*.weights
+yolo/weights/*.74
+__pycache__
+checkpoints
+example.ipynb
