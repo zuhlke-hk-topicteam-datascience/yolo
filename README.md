@@ -2,7 +2,7 @@
 
 
 
-Example usage
+## Example 
 
 
 ```python
@@ -17,6 +17,15 @@ model = Yolo()
 y = model.predict(img)
 
 ```
+
+## Installation
+
+
+```
+ pip install git+https://github.com/zuhlke-hk-topicteam-datascience/yolo
+```
+
+## Deps
 
 Downloading model weights depends on  `wget` so if you may need to install with `brew install wget`
 
