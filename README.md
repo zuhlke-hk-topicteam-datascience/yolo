@@ -10,13 +10,11 @@ Example usage
 from yolo import Yolo
 from PIL import Image
 
-path "<path to a image>"
+path = "<path to a image>"
 img = Image.open(path)
 
 model = Yolo()
 y = model.predict(img)
-
-
 
 ```
 
