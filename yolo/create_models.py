@@ -1,5 +1,5 @@
 import os
-from .utils import utils
+from .utils import *
 from .models import *
 from PIL import Image
 from torchvision.transforms import Compose, Resize, ToTensor
@@ -48,10 +48,10 @@ class Model:
         """
         x = self.pil_to_tensor(img)
         y = self.model(x)
-        detections = utils.non_max_suppression(y, self.conf_thres, self.nms_thres)[0]
+        detections = non_max_suppression(y, self.conf_thres, self.nms_thres)[0]
 
         if detections is not None:
-            detections = utils.rescale_boxes(
+            detections = rescale_boxes(
                 detections, self.img_size, list(img.size))
             return [{
                 "x1": float(x1),
@@ -108,4 +108,4 @@ class Yolo(Model):
 
     def _load_classes(self):
         path = os.path.join(filedir(), "config/coco.names")
-        self.classes = utils.load_classes(path)
+        self.classes = load_classes(path)
